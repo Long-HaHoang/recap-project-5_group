@@ -1,74 +1,21 @@
 import Image from "next/image";
-import styled from "styled-components";
 
+import StyledListContainer from "../ListContainer.styled";
+import ArtistName from "../ArtistName.styled";
+import PiecesTitel from "../PiecesTitel.styled";
 
-export default function Card() {
+export default function Card({ pieceName, pieceImg, artistName }) {
   return (
-    <styledDiv>
-    <ul>
+    <StyledListContainer>
       <li>
-        <h2>Orange Red and Green Abstract Painting</h2>
+        <PiecesTitel>{pieceName}</PiecesTitel>
       </li>
       <li>
-        <Image
-          src={
-            "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg"
-          }
-          alt=""
-          height={300}
-          width={300}
-        ></Image>
+        <Image src={pieceImg} alt="" height={300} width={300}></Image>
       </li>
-      <li>
-        <p>Steve Johnson</p>
-      </li>
-    </ul>
-
-<ul>
-<li>
-  <h2>Blue and Red</h2>
-</li>
-<li>
-  <Image
-    src={
-      "https://example-apis.vercel.app/assets/art/blue-and-red.jpg"
-    }
-    alt=""
-    height={300}
-    width={300}
-  ></Image>
-</li>
-<li>
-  <p>Jung-Hua Lui</p>
-</li>
-</ul>
-
-<ul>
-      <li>
-        <h2>Clay Bust Sculptures</h2>
-      </li>
-      <li>
-        <Image
-          src={
-            "https://example-apis.vercel.app/assets/art/clay-bust-sculptures.jpg"
-          }
-          alt=""
-          height={300}
-          width={300}
-        ></Image>
-      </li>
-      <li>
-        <p>dilara irem</p>
-      </li>
-    </ul>
-    </styledDiv>
+      <ArtistName>
+        <p>{artistName}</p>
+      </ArtistName>
+    </StyledListContainer>
   );
 }
-
-const styledDiv = styled.div `
-width: 100vw;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-`
